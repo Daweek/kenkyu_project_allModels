@@ -2,25 +2,6 @@
 This is modified by MARTINEZ Edg@r.
 11 - 2020
 
-### TSUBAME setup
-#### Interactive node
-qrsh -g tga-hpc-lecture -l f_node=1 -l h_rt=0:50:00 -ar 予約番号  
-#### Job schedule
-qsub -g tga-hpc-lecture job.sh "python 00_numpy.py"  
-qsub -g tga-hpc-lecture job.sh "mpirun -np 4 python 19_regularization.py"  
-qsub -g tga-hpc-lecture job.sh "wandb agent rioyokotalab/kenkyu_project/ux2akgap"
-#### Job monitor (r: 実行中, qw: 順番待ち)
-qstat
-#### Job delete
-qdel ジョブID
-
-#### Modules
-echo '' >> ~/.bashrc  
-echo '# Modules' >> ~/.bashrc  
-echo 'source /etc/profile.d/modules.sh' >> ~/.bashrc  
-echo 'module load cuda openmpi nccl cudnn' >> ~/.bashrc  
-source ~/.bashrc
-
 #### Install Pyenv Virtualenv
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv  
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv  
